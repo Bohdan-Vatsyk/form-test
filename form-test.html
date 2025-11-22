@@ -156,7 +156,7 @@
 .trust-signal img{height:100%;width:auto;object-fit:contain}
 
 /* Hide trust signals on step with submit button (now step 8) */
-.step-container[data-step="8"] .trust-signals{display:none}
+.step-container[data-step="9"] .trust-signals{display:none}
 
 /* Updated styles for success container */
 .success-container p.success-message:nth-of-type(2){font-weight:bold;font-size:20px}
@@ -358,6 +358,24 @@
       <div class="step-container" data-step="7">
         <div class="step-header">
           <div class="step-label">LOAN HISTORY</div>
+      <!-- Step 8: Was Default Satisfied -->
+      <div class="step-container" data-step="8">
+        <div class="step-header">
+          <div class="step-label">LOAN HISTORY</div>
+          <h2 class="step-title">Was your previous loan default fully satisfied?</h2>
+        </div>
+        <div class="options-grid">
+          <div class="option-card" data-value="satisfied-yes"><div class="check-mark">✓</div><div class="option-text">Yes</div></div>
+          <div class="option-card" data-value="satisfied-no"><div class="check-mark">✓</div><div class="option-text">No</div></div>
+        </div>
+        <div class="trust-signals">
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg"></div>
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg"></div>
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg"></div>
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg"></div>
+        </div>
+      </div>
+
           <h2 class="step-title">Have you ever defaulted on a business loan?</h2>
         </div>
         <div class="options-grid">
@@ -473,7 +491,7 @@
 <script>
 (function(){
   let currentStep = 1;
-  const totalSteps = 8;
+  const totalSteps = 9;
   const formData = {};
   const backButton = document.getElementById('backButton');
   const progressInfo = document.getElementById('progressInfo');
@@ -494,6 +512,13 @@
       currentContainer.classList.add('fade-out');
       currentContainer.classList.remove('show');
       setTimeout(function(){
+        // Skip Step 8 if defaulted = no
+        if(step === 7 && value === "no") {
+          currentStep = 9;
+          showStep(9);
+          return;
+        }
+
         currentContainer.classList.remove('active','fade-out');
         if(targetStep){
           targetStep.classList.add('active');
@@ -516,8 +541,7 @@
     'fundingAmount',    // step 4
     'fundingPurpose',   // step 5
     'creditScore',      // step 6
-    'defaulted'         // step 7
-  ];
+    'defaulted'         // step , 'defaultSatisfied'];
 
   document.querySelectorAll('.option-card').forEach(function(card){
     card.addEventListener('click', function(){
@@ -702,4 +726,3 @@
   if(firstStep){ firstStep.classList.add('show'); }
 })();
 </script>
-
