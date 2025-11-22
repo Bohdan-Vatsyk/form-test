@@ -155,7 +155,7 @@
 .trust-signal{height:40px}
 .trust-signal img{height:100%;width:auto;object-fit:contain}
 
-/* Hide trust signals on step with submit button (now step 8) */
+/* Hide trust signals on step with submit button (now step 9) */
 .step-container[data-step="9"] .trust-signals{display:none}
 
 /* Updated styles for success container */
@@ -358,24 +358,6 @@
       <div class="step-container" data-step="7">
         <div class="step-header">
           <div class="step-label">LOAN HISTORY</div>
-      <!-- Step 8: Was Default Satisfied -->
-      <div class="step-container" data-step="8">
-        <div class="step-header">
-          <div class="step-label">LOAN HISTORY</div>
-          <h2 class="step-title">Was your previous loan default fully satisfied?</h2>
-        </div>
-        <div class="options-grid">
-          <div class="option-card" data-value="satisfied-yes"><div class="check-mark">✓</div><div class="option-text">Yes</div></div>
-          <div class="option-card" data-value="satisfied-no"><div class="check-mark">✓</div><div class="option-text">No</div></div>
-        </div>
-        <div class="trust-signals">
-          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg"></div>
-          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg"></div>
-          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg"></div>
-          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg"></div>
-        </div>
-      </div>
-
           <h2 class="step-title">Have you ever defaulted on a business loan?</h2>
         </div>
         <div class="options-grid">
@@ -390,8 +372,27 @@
         </div>
       </div>
 
-      <!-- Step 8: Contact Info -->
+      <!-- Step 8: Was the default satisfied -->
       <div class="step-container" data-step="8">
+        <div class="step-header">
+          <div class="step-label">LOAN HISTORY</div>
+          <h2 class="step-title">Was the default fully satisfied?</h2>
+        </div>
+        <div class="options-grid">
+          <div class="option-card" data-value="yes"><div class="check-mark">✓</div><div class="option-text">Yes</div></div>
+          <div class="option-card" data-value="no"><div class="check-mark">✓</div><div class="option-text">No</div></div>
+        </div>
+        <div class="trust-signals">
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot Reviews"></div>
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL Secured"></div>
+          <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee Secure"></div>
+        </div>
+      </div>
+
+
+      <!-- Step 9: Contact Info -->
+      <div class="step-container" data-step="9">
         <div class="step-header">
           <div class="step-label">FINAL STEP</div>
           <h2 class="step-title">Finalize Free Estimate</h2>
@@ -512,13 +513,6 @@
       currentContainer.classList.add('fade-out');
       currentContainer.classList.remove('show');
       setTimeout(function(){
-        // Skip Step 8 if defaulted = no
-        if(step === 7 && value === "no") {
-          currentStep = 9;
-          showStep(9);
-          return;
-        }
-
         currentContainer.classList.remove('active','fade-out');
         if(targetStep){
           targetStep.classList.add('active');
@@ -533,15 +527,17 @@
     updateProgress();
   }
 
-  // Map steps 1–7 to formData keys
+  // Map steps 1–8 to formData keys
   var stepNames = [
-    'businessType',     // step 1
-    'timeInBusiness',   // step 2
-    'monthlyRevenue',   // step 3
-    'fundingAmount',    // step 4
-    'fundingPurpose',   // step 5
-    'creditScore',      // step 6
-    'defaulted'         // step , 'defaultSatisfied'];
+    'businessType',       // step 1
+    'timeInBusiness',     // step 2
+    'monthlyRevenue',     // step 3
+    'fundingAmount',      // step 4
+    'fundingPurpose',     // step 5
+    'creditScore',        // step 6
+    'defaulted',          // step 7
+    'defaultSatisfied'    // step 8
+  ];
 
   document.querySelectorAll('.option-card').forEach(function(card){
     card.addEventListener('click', function(){
@@ -559,19 +555,35 @@
 
       setTimeout(function(){
         if(currentStep < totalSteps){
-          currentStep++;
+          let nextStep = currentStep + 1;
+
+          // Якщо наступний крок — 8, але defaulted = 'no', пропускаємо прямо на контактну форму (step 9)
+          if(nextStep === 8 && formData.defaulted === 'no'){
+            nextStep = 9;
+          }
+
+          currentStep = nextStep;
           showStep(currentStep);
         }
       },400);
+
     });
   });
 
   backButton.addEventListener('click', function(){
     if(currentStep > 1){
-      currentStep--;
+      let prevStep = currentStep - 1;
+
+      // Якщо йдемо назад з contact step (9) і defaulted = 'no', повертаємось одразу на step 7
+      if(currentStep === 9 && formData.defaulted === 'no'){
+        prevStep = 7;
+      }
+
+      currentStep = prevStep;
       showStep(currentStep);
     }
   });
+
 
   function validateEmail(email){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
   function validatePhone(phone){ return /^[\d\s\-\(\)\+]+$/.test(phone) && phone.replace(/\D/g,'').length >= 10; }
@@ -642,11 +654,13 @@
       !formData.fundingAmount ||
       !formData.fundingPurpose ||
       !formData.creditScore ||
-      !formData.defaulted
+      !formData.defaulted ||
+      (formData.defaulted === 'yes' && !formData.defaultSatisfied)
     ){
       alert('Please complete all previous steps before submitting.');
       return;
     }
+
 
     formData.firstName = firstName.value;
     formData.lastName = lastName.value;
@@ -661,7 +675,8 @@
     const isUnqualified =
       formData.timeInBusiness === 'less-6' ||
       formData.monthlyRevenue === '0-10k' ||
-      formData.defaulted === 'yes';
+      (formData.defaulted === 'yes' && formData.defaultSatisfied === 'no');
+
 
     formData.isUnqualified = isUnqualified;
 
