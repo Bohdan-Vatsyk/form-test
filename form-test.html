@@ -143,7 +143,7 @@
 .trust-signal{height:40px}
 .trust-signal img{height:100%;width:auto;object-fit:contain}
 
-.step-container[data-step="12"] .trust-signals{display:none}
+.step-container[data-step="11"] .trust-signals{display:none}
 .success-container p.success-message:nth-of-type(2){font-weight:bold;font-size:20px}
 .success-container a.submit-button{margin-top:20px !important}
 .cf-turnstile{margin:20px 0;display:flex;justify-content:center}
@@ -197,7 +197,7 @@
     </button>
 
     <div class="progress-container">
-      <div class="progress-info" id="progressInfo">1 of 12</div>
+      <div class="progress-info" id="progressInfo">1 of 11</div>
       <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
     </div>
 
@@ -270,8 +270,7 @@
           <h2 class="step-title">How long have you been in business?</h2>
         </div>
         <div class="options-grid">
-          <div class="option-card" data-value="less-3"><div class="check-mark">✓</div><div class="option-text">Less Than 3 Months</div></div>
-          <div class="option-card" data-value="3-6"><div class="check-mark">✓</div><div class="option-text">3-6 Months</div></div>
+          <div class="option-card" data-value="1-6"><div class="check-mark">✓</div><div class="option-text">1-6 Months</div></div>
           <div class="option-card" data-value="6-12"><div class="check-mark">✓</div><div class="option-text">6-12 Months</div></div>
           <div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 Years</div></div>
           <div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 Years</div></div>
@@ -343,19 +342,6 @@
 
       <div class="step-container" data-step="8">
         <div class="step-header">
-          <div class="step-label">LOCATION</div>
-          <h2 class="step-title">What is your business ZIP code?</h2>
-        </div>
-        <div class="form-group">
-          <label for="zipCode">ZIP Code</label>
-          <input type="text" id="zipCode" class="form-input" inputmode="numeric" maxlength="10" placeholder="Enter ZIP code">
-          <div class="error-message">Please enter a valid ZIP code</div>
-        </div>
-        <button type="button" class="submit-button" id="zipNextButton">Continue</button>
-      </div>
-
-      <div class="step-container" data-step="9">
-        <div class="step-header">
           <div class="step-label">BUSINESS DETAILS</div>
           <h2 class="step-title">What's your business name?</h2>
         </div>
@@ -367,7 +353,7 @@
         <button type="button" class="submit-button" id="businessNextButton">Continue</button>
       </div>
 
-      <div class="step-container" data-step="10">
+      <div class="step-container" data-step="9">
         <div class="step-header">
           <div class="step-label">CONTACT DETAILS</div>
           <h2 class="step-title">What's your full name?</h2>
@@ -387,7 +373,7 @@
         <button type="button" class="submit-button" id="nameNextButton">Continue</button>
       </div>
 
-      <div class="step-container" data-step="11">
+      <div class="step-container" data-step="10">
         <div class="step-header">
           <div class="step-label">CONTACT DETAILS</div>
           <h2 class="step-title">Where can we send your options?</h2>
@@ -405,7 +391,7 @@
         <button type="button" class="submit-button" id="contactNextButton">Continue</button>
       </div>
 
-      <div class="step-container" data-step="12">
+      <div class="step-container" data-step="11">
         <div class="step-header">
           <div class="step-label">FINAL STEP</div>
           <h2 class="step-title">Where are you in the funding process right now?</h2>
@@ -414,7 +400,6 @@
         <form id="contactForm">
           <div class="options-grid" id="processStageGrid" style="margin-bottom:25px;">
             <div class="option-card process-card" data-value="ready-to-fund"><div class="check-mark">✓</div><div class="option-text">Ready to Fund</div></div>
-            <div class="option-card process-card" data-value="shopping-options"><div class="check-mark">✓</div><div class="option-text">Shopping Options</div></div>
             <div class="option-card process-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div>
             <div class="option-card process-card" data-value="comparing-offers"><div class="check-mark">✓</div><div class="option-text">Comparing Offers</div></div>
           </div>
@@ -456,13 +441,24 @@
           </div>
         </div>
       </div>
+      <div class="success-container" id="disqualifiedContainer" style="display:none;">
+        <div class="success-main">
+          <div class="success-content">
+            <h2 class="success-title">Sorry, you don’t qualify at this time</h2>
+            <p class="success-message">
+              Based on your answers, we’re not able to offer funding right now.
+              Please check back once your business grows further.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
 (function(){
-  const totalSteps = 12;
+  const totalSteps = 11;
   let currentStep = 1;
   const formData = {};
   const backButton = document.getElementById('backButton');
@@ -638,7 +634,6 @@
 
   function validateEmail(email){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
   function validatePhone(phone){ return /^[\d\s\-\(\)\+]+$/.test(phone) && phone.replace(/\D/g,'').length >= 10; }
-  function validateZip(zip){ return /^\d{5}(?:-\d{4})?$/.test(zip.trim()); }
 
   function showError(input, message){
     input.classList.add('error');
@@ -656,6 +651,21 @@
       errorElement.classList.remove('show');
     }
   }
+
+  function isDisqualified(step, value){
+    if(step === 3 && value === '0-10k') return true;
+    if(step === 4 && value === '1-6') return true;
+    return false;
+  }
+
+  function showDisqualified(){
+    const activeStep = document.querySelector('.step-container.active');
+    if(activeStep){ activeStep.classList.remove('active'); }
+    document.querySelector('.progress-container').style.display = 'none';
+    backButton.style.display = 'none';
+    document.getElementById('disqualifiedContainer').style.display = 'block';
+  }
+
 
   function amountLabel(value){
     const map = {
@@ -690,7 +700,7 @@
       case 5: formData.fundingTimeline = value; break;
       case 6: formData.creditScore = value; break;
       case 7: formData[nicheConfig.key] = value; break;
-      case 12: formData.processStage = value; break;
+      case 11: formData.processStage = value; break;
     }
   }
 
@@ -702,7 +712,12 @@
     card.classList.add('selected');
     setStepValue(step, value);
 
-    if(step !== 12){
+    if(isDisqualified(step, value)){
+      showDisqualified();
+      return;
+    }
+
+    if(step !== 11){
       setTimeout(nextStep, 350);
     }
   }
@@ -717,17 +732,6 @@
     if(currentStep > 1){
       showStep(currentStep - 1);
     }
-  });
-
-  document.getElementById('zipNextButton').addEventListener('click', function(){
-    const zipInput = document.getElementById('zipCode');
-    clearError(zipInput);
-    if(!validateZip(zipInput.value)){
-      showError(zipInput, 'Please enter a valid ZIP code');
-      return;
-    }
-    formData.zipCode = zipInput.value.trim();
-    nextStep();
   });
 
   document.getElementById('businessNextButton').addEventListener('click', function(){
@@ -835,7 +839,6 @@
       !formData.fundingTimeline ||
       !formData.creditScore ||
       !formData[nicheConfig.key] ||
-      !formData.zipCode ||
       !formData.businessName ||
       !formData.firstName ||
       !formData.lastName ||
