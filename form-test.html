@@ -17,7 +17,6 @@
 }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-/* Left Panel - Selling Points */
 .left-panel {
   flex: 0 0 380px;
   background: #3C8648;
@@ -53,17 +52,14 @@
 }
 .check-icon svg{width:16px;height:16px;fill:#3C8648}
 
-/* Right Panel - Form */
 .right-panel{flex:1;padding:40px;position:relative;display:flex;flex-direction:column}
 
-/* Progress Bar */
 .progress-container{margin-bottom:50px;opacity:0;transform:translateY(-20px);animation:fadeInDown .6s ease-out forwards;animation-delay:.6s}
 @keyframes fadeInDown{to{opacity:1;transform:translateY(0)}}
 .progress-info{text-align:center;margin-bottom:20px;color:#718096;font-size:16px}
 .progress-bar{width:100%;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
-.progress-fill{height:100%;background:#3c8648;border-radius:4px;transition:width .5s ease;width:20%}
+.progress-fill{height:100%;background:#3c8648;border-radius:4px;transition:width .5s ease;width:8.333%}
 
-/* Back Button */
 .back-button{
   position:absolute;top:40px;left:40px;background:none;border:none;color:#718096;cursor:pointer;
   display:flex;align-items:center;gap:8px;font-size:16px;transition:color .3s ease;padding:8px;z-index:10;
@@ -71,7 +67,6 @@
 .back-button:hover{color:#3c8648}
 .back-button svg{width:20px;height:20px}
 
-/* Step Container */
 .form-content{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:600px;margin:0 auto;width:100%}
 .step-container{display:none;opacity:0;transform:translateX(30px);transition:opacity .3s ease, transform .3s ease}
 .step-container.active{display:block}
@@ -80,14 +75,13 @@
 .step-header{text-align:center;margin-bottom:40px}
 .step-label{text-transform:uppercase;color:#718096;font-size:14px;letter-spacing:1px;margin-bottom:15px}
 .step-title{font-size:28px;font-weight:700;color:#2c3e50;margin:0;line-height:1.3}
+.step-subtitle{font-size:15px;color:#718096;margin-top:12px;line-height:1.5}
 
-/* Options Grid */
 .options-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:30px}
 .option-card:nth-child(5):last-child,
 .option-card:nth-child(7):last-child{grid-column:1/-1;max-width:calc(50% - 8px);margin:0 auto}
 .options-grid:has(.option-card:nth-child(8)) .option-card:nth-child(7){grid-column:auto;max-width:none;margin:0}
 
-/* Fix option-card padding/height to match old version */
 .option-card {
   background: #f8f9fa;
   border: 2px solid #e2e8f0;
@@ -99,7 +93,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 55px;   
+  min-height: 55px;
   text-align: center;
 }
 .option-card:hover{border-color:#3c8648;transform:translateY(-2px);box-shadow:0 4px 12px rgba(60,134,72,.1)}
@@ -112,7 +106,6 @@
 }
 .option-card.selected .check-mark{display:flex}
 
-/* Form Fields */
 .form-group{margin-bottom:20px}
 .form-group label{display:block;font-size:16px;font-weight:600;color:#2c3e50;margin-bottom:8px}
 .form-input{width:100%;padding:14px 18px;font-size:16px;border:2px solid #e2e8f0;border-radius:8px;transition:border-color .3s ease;font-family:inherit}
@@ -121,17 +114,14 @@
 .error-message{color:#e53e3e;font-size:14px;margin-top:5px;display:none}
 .error-message.show{display:block}
 
-/* Checkbox */
 .checkbox-group{margin-top:20px;margin-bottom:20px}
 .checkbox-label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;color:#4a5568;line-height:1.5}
 .checkbox-input{width:20px;height:20px;margin-top:2px;cursor:pointer;accent-color:#3c8648}
 
-/* Submit Button */
 .submit-button{width:100%;padding:18px 32px;background:#3c8648;color:#fff;font-size:18px;font-weight:600;border:none;border-radius:8px;cursor:pointer;transition:all .3s ease;margin-top:20px}
 .submit-button:hover:not(:disabled){background:#2f6b39;transform:translateY(-2px);box-shadow:0 6px 16px rgba(60,134,72,.3)}
 .submit-button:disabled{background:#cbd5e0;cursor:not-allowed}
 
-/* Success Message */
 .success-container{display:none;padding:0 20px 20px;text-align:left}
 .success-logo{width:102px}
 .success-main{display:flex;align-items:flex-start;gap:40px}
@@ -144,10 +134,8 @@
 .cta-button{display:flex;flex-direction:column;padding:12px 24px;border-radius:8px;text-align:center;font-size:16px;font-weight:600;text-decoration:none;transition:all .3s ease;min-width:150px;margin-top:10px}
 .cta-button:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
 .call-now{background:#3c8648;color:#fff}
-.schedule-call{background:#fff;color:#3c8648;border:2px solid #3c8648}
 .cta-subtext{font-size:12px;margin-top:5px;font-weight:normal}
 
-/* Trust Signals */
 .trust-signals{
   display:flex;align-items:center;justify-content:center;gap:40px;margin-top:40px;padding-top:40px;border-top:1px solid #e2e8f0;
   flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-out forwards;animation-delay:.9s
@@ -155,15 +143,12 @@
 .trust-signal{height:40px}
 .trust-signal img{height:100%;width:auto;object-fit:contain}
 
-/* Hide trust signals on step with submit button (now step 8) */
-.step-container[data-step="8"] .trust-signals{display:none}
-
-/* Updated styles for success container */
+.step-container[data-step="12"] .trust-signals{display:none}
 .success-container p.success-message:nth-of-type(2){font-weight:bold;font-size:20px}
 .success-container a.submit-button{margin-top:20px !important}
 .cf-turnstile{margin:20px 0;display:flex;justify-content:center}
+.helper-copy{font-size:14px;color:#718096;text-align:center;margin-top:-10px;margin-bottom:20px}
 
-/* Mobile */
 @media (max-width:768px){
   .funding-widget{flex-direction:column-reverse;min-height:auto}
   .cf-turnstile{transform:scale(.85);transform-origin:center}
@@ -194,7 +179,6 @@
 </style>
 
 <div class="funding-widget">
-  <!-- Left Panel with Selling Points -->
   <div class="left-panel">
     <h1>Get Business Funding Today</h1>
     <ul class="selling-points">
@@ -207,30 +191,31 @@
     </ul>
   </div>
 
-  <!-- Right Panel with Form -->
   <div class="right-panel">
     <button class="back-button" id="backButton" style="display:none;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7m-7-7l7-7"/></svg>Back
     </button>
 
     <div class="progress-container">
-      <div class="progress-info" id="progressInfo">1 of 8</div>
+      <div class="progress-info" id="progressInfo">1 of 12</div>
       <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
     </div>
 
     <div class="form-content">
-      <!-- Step 1: Type of Business -->
       <div class="step-container active" data-step="1">
         <div class="step-header">
-          <div class="step-label">BUSINESS INFORMATION</div>
-          <h2 class="step-title">What type of business do you own?</h2>
+          <div class="step-label">BUSINESS LOAN</div>
+          <h2 class="step-title">What is your desired funding amount?</h2>
         </div>
         <div class="options-grid">
-          <div class="option-card" data-value="llc"><div class="check-mark">✓</div><div class="option-text">Limited Liability Company</div></div>
-          <div class="option-card" data-value="sole-proprietor"><div class="check-mark">✓</div><div class="option-text">Sole Proprietor</div></div>
-          <div class="option-card" data-value="partnership"><div class="check-mark">✓</div><div class="option-text">Partnership</div></div>
-          <div class="option-card" data-value="c-corp"><div class="check-mark">✓</div><div class="option-text">C Corporation</div></div>
-          <div class="option-card" data-value="s-corp"><div class="check-mark">✓</div><div class="option-text">S Corporation</div></div>
+          <div class="option-card" data-value="under-10k"><div class="check-mark">✓</div><div class="option-text">Under $10k</div></div>
+          <div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div>
+          <div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div>
+          <div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div>
+          <div class="option-card" data-value="100-250k"><div class="check-mark">✓</div><div class="option-text">$100k-250k</div></div>
+          <div class="option-card" data-value="250-500k"><div class="check-mark">✓</div><div class="option-text">$250k-500k</div></div>
+          <div class="option-card" data-value="500k-1m"><div class="check-mark">✓</div><div class="option-text">$500k- $1m</div></div>
+          <div class="option-card" data-value="1m+"><div class="check-mark">✓</div><div class="option-text">$1m+</div></div>
         </div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
@@ -240,18 +225,15 @@
         </div>
       </div>
 
-      <!-- Step 2: Time in Business -->
       <div class="step-container" data-step="2">
         <div class="step-header">
-          <div class="step-label">BUSINESS INFORMATION</div>
-          <h2 class="step-title">How long have you been in business?</h2>
+          <div class="step-label">CURRENT DEBT</div>
+          <h2 class="step-title">Do you currently have any active positions or MCAs?</h2>
         </div>
         <div class="options-grid">
-          <div class="option-card" data-value="less-6"><div class="check-mark">✓</div><div class="option-text">Less than 6 months</div></div>
-          <div class="option-card" data-value="6-12"><div class="check-mark">✓</div><div class="option-text">6-12 months</div></div>
-          <div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 years</div></div>
-          <div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 years</div></div>
-          <div class="option-card" data-value="5+"><div class="check-mark">✓</div><div class="option-text">5+ years</div></div>
+          <div class="option-card" data-value="none"><div class="check-mark">✓</div><div class="option-text">No Active Positions</div></div>
+          <div class="option-card" data-value="1"><div class="check-mark">✓</div><div class="option-text">1 Active Position</div></div>
+          <div class="option-card" data-value="2-plus"><div class="check-mark">✓</div><div class="option-text">2+ Active Positions</div></div>
         </div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
@@ -261,7 +243,6 @@
         </div>
       </div>
 
-      <!-- Step 3: Average Monthly Revenue -->
       <div class="step-container" data-step="3">
         <div class="step-header">
           <div class="step-label">FINANCIAL INFORMATION</div>
@@ -272,9 +253,8 @@
           <div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div>
           <div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div>
           <div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div>
-          <div class="option-card" data-value="100-500k"><div class="check-mark">✓</div><div class="option-text">$100k-500k</div></div>
-          <div class="option-card" data-value="500k-1m"><div class="check-mark">✓</div><div class="option-text">$500k- $1m</div></div>
-          <div class="option-card" data-value="1m+"><div class="check-mark">✓</div><div class="option-text">$1m+</div></div>
+          <div class="option-card" data-value="100-250k"><div class="check-mark">✓</div><div class="option-text">$100k-250k</div></div>
+          <div class="option-card" data-value="250k+"><div class="check-mark">✓</div><div class="option-text">$250k+</div></div>
         </div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
@@ -284,19 +264,18 @@
         </div>
       </div>
 
-      <!-- Step 4: Desired Funding Amount -->
       <div class="step-container" data-step="4">
         <div class="step-header">
-          <div class="step-label">BUSINESS LOAN</div>
-          <h2 class="step-title">What is your desired funding amount?</h2>
+          <div class="step-label">BUSINESS INFORMATION</div>
+          <h2 class="step-title">How long have you been in business?</h2>
         </div>
         <div class="options-grid">
-          <div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div>
-          <div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div>
-          <div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div>
-          <div class="option-card" data-value="100-500k"><div class="check-mark">✓</div><div class="option-text">$100k-500k</div></div>
-          <div class="option-card" data-value="500k-1m"><div class="check-mark">✓</div><div class="option-text">$500k- $1m</div></div>
-          <div class="option-card" data-value="1m+"><div class="check-mark">✓</div><div class="option-text">$1m+</div></div>
+          <div class="option-card" data-value="less-3"><div class="check-mark">✓</div><div class="option-text">Less Than 3 Months</div></div>
+          <div class="option-card" data-value="3-6"><div class="check-mark">✓</div><div class="option-text">3-6 Months</div></div>
+          <div class="option-card" data-value="6-12"><div class="check-mark">✓</div><div class="option-text">6-12 Months</div></div>
+          <div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 Years</div></div>
+          <div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 Years</div></div>
+          <div class="option-card" data-value="5+"><div class="check-mark">✓</div><div class="option-text">5+ Years</div></div>
         </div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
@@ -306,22 +285,17 @@
         </div>
       </div>
 
-      <!-- Step 5: Purpose of Financing -->
       <div class="step-container" data-step="5">
         <div class="step-header">
-          <div class="step-label">PURPOSE</div>
-          <h2 class="step-title">What do you need the financing for?</h2>
+          <div class="step-label">TIMELINE</div>
+          <h2 class="step-title">How soon do you need the funding?</h2>
         </div>
         <div class="options-grid">
-          <div class="option-card" data-value="working-capital"><div class="check-mark">✓</div><div class="option-text">Working Capital</div></div>
-          <div class="option-card" data-value="expansion"><div class="check-mark">✓</div><div class="option-text">Expansion</div></div>
-          <div class="option-card" data-value="hire-staff"><div class="check-mark">✓</div><div class="option-text">Hire Staff</div></div>
-          <div class="option-card" data-value="buy-inventory"><div class="check-mark">✓</div><div class="option-text">Buy Inventory</div></div>
-          <div class="option-card" data-value="purchase-equipment"><div class="check-mark">✓</div><div class="option-text">Purchase Equipment</div></div>
-          <div class="option-card" data-value="debt-consolidation"><div class="check-mark">✓</div><div class="option-text">Debt Consolidation</div></div>
-          <div class="option-card" data-value="payroll"><div class="check-mark">✓</div><div class="option-text">Payroll</div></div>
-          <div class="option-card" data-value="bridge-receivables"><div class="check-mark">✓</div><div class="option-text">Bridge Receivables</div></div>
-          <div class="option-card" data-value="other"><div class="check-mark">✓</div><div class="option-text">Other</div></div>
+          <div class="option-card" data-value="today"><div class="check-mark">✓</div><div class="option-text">Today</div></div>
+          <div class="option-card" data-value="this-week"><div class="check-mark">✓</div><div class="option-text">This Week</div></div>
+          <div class="option-card" data-value="two-weeks"><div class="check-mark">✓</div><div class="option-text">Within 2 Weeks</div></div>
+          <div class="option-card" data-value="this-month"><div class="check-mark">✓</div><div class="option-text">This Month</div></div>
+          <div class="option-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div>
         </div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
@@ -331,20 +305,18 @@
         </div>
       </div>
 
-      <!-- Step 6: Credit Score (old version preserved) -->
       <div class="step-container" data-step="6">
         <div class="step-header">
           <div class="step-label">CREDIT INFORMATION</div>
           <h2 class="step-title">What is your personal credit score?</h2>
         </div>
         <div class="options-grid">
-          <div class="option-card" data-value="<500"><div class="check-mark">✓</div><div class="option-text">&lt;500</div></div>
+          <div class="option-card" data-value="under-500"><div class="check-mark">✓</div><div class="option-text">Under 500</div></div>
           <div class="option-card" data-value="500-550"><div class="check-mark">✓</div><div class="option-text">500-550</div></div>
           <div class="option-card" data-value="550-600"><div class="check-mark">✓</div><div class="option-text">550-600</div></div>
           <div class="option-card" data-value="600-650"><div class="check-mark">✓</div><div class="option-text">600-650</div></div>
           <div class="option-card" data-value="650-700"><div class="check-mark">✓</div><div class="option-text">650-700</div></div>
-          <div class="option-card" data-value="700-750"><div class="check-mark">✓</div><div class="option-text">700-750</div></div>
-          <div class="option-card" data-value="750+"><div class="check-mark">✓</div><div class="option-text">750+</div></div>
+          <div class="option-card" data-value="700+"><div class="check-mark">✓</div><div class="option-text">700+</div></div>
         </div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
@@ -354,16 +326,13 @@
         </div>
       </div>
 
-      <!-- Step 7: Defaulted on Business Loan -->
       <div class="step-container" data-step="7">
         <div class="step-header">
-          <div class="step-label">LOAN HISTORY</div>
-          <h2 class="step-title">Have you ever defaulted on a business loan?</h2>
+          <div class="step-label" id="dynamicStepLabel">INDUSTRY</div>
+          <h2 class="step-title" id="dynamicStepTitle">What industry are you in?</h2>
+          <p class="step-subtitle" id="dynamicStepSubtitle">This helps us match you with the right funding options.</p>
         </div>
-        <div class="options-grid">
-          <div class="option-card" data-value="yes"><div class="check-mark">✓</div><div class="option-text">Yes</div></div>
-          <div class="option-card" data-value="no"><div class="check-mark">✓</div><div class="option-text">No</div></div>
-        </div>
+        <div class="options-grid" id="dynamicOptionsGrid"></div>
         <div class="trust-signals">
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB Accredited Business"></div>
           <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot Reviews"></div>
@@ -372,40 +341,84 @@
         </div>
       </div>
 
-      <!-- Step 8: Contact Info -->
       <div class="step-container" data-step="8">
         <div class="step-header">
+          <div class="step-label">LOCATION</div>
+          <h2 class="step-title">What is your business ZIP code?</h2>
+        </div>
+        <div class="form-group">
+          <label for="zipCode">ZIP Code</label>
+          <input type="text" id="zipCode" class="form-input" inputmode="numeric" maxlength="10" placeholder="Enter ZIP code">
+          <div class="error-message">Please enter a valid ZIP code</div>
+        </div>
+        <button type="button" class="submit-button" id="zipNextButton">Continue</button>
+      </div>
+
+      <div class="step-container" data-step="9">
+        <div class="step-header">
+          <div class="step-label">BUSINESS DETAILS</div>
+          <h2 class="step-title">What's your business name?</h2>
+        </div>
+        <div class="form-group">
+          <label for="businessNameStep">Business Name</label>
+          <input type="text" id="businessNameStep" class="form-input" placeholder="Enter business name">
+          <div class="error-message">Please enter your business name</div>
+        </div>
+        <button type="button" class="submit-button" id="businessNextButton">Continue</button>
+      </div>
+
+      <div class="step-container" data-step="10">
+        <div class="step-header">
+          <div class="step-label">CONTACT DETAILS</div>
+          <h2 class="step-title">What's your full name?</h2>
+        </div>
+        <div class="options-grid" style="margin-bottom:30px;">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" class="form-input" placeholder="First name">
+            <div class="error-message">Please enter your first name</div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="form-input" placeholder="Last name">
+            <div class="error-message">Please enter your last name</div>
+          </div>
+        </div>
+        <button type="button" class="submit-button" id="nameNextButton">Continue</button>
+      </div>
+
+      <div class="step-container" data-step="11">
+        <div class="step-header">
+          <div class="step-label">CONTACT DETAILS</div>
+          <h2 class="step-title">Where can we send your options?</h2>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-input" placeholder="Email address">
+          <div class="error-message">Please enter a valid email address</div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" class="form-input" placeholder="Phone number">
+          <div class="error-message">Please enter a valid phone number</div>
+        </div>
+        <button type="button" class="submit-button" id="contactNextButton">Continue</button>
+      </div>
+
+      <div class="step-container" data-step="12">
+        <div class="step-header">
           <div class="step-label">FINAL STEP</div>
-          <h2 class="step-title">Finalize Free Estimate</h2>
+          <h2 class="step-title">Where are you in the funding process right now?</h2>
+          <p class="step-subtitle">One last step and we’ll match you with the best options.</p>
         </div>
         <form id="contactForm">
-          <div class="options-grid" style="margin-bottom:30px;">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" class="form-input" required>
-              <div class="error-message">Please enter your first name</div>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" class="form-input" required>
-              <div class="error-message">Please enter your last name</div>
-            </div>
+          <div class="options-grid" id="processStageGrid" style="margin-bottom:25px;">
+            <div class="option-card process-card" data-value="ready-to-fund"><div class="check-mark">✓</div><div class="option-text">Ready to Fund</div></div>
+            <div class="option-card process-card" data-value="shopping-options"><div class="check-mark">✓</div><div class="option-text">Shopping Options</div></div>
+            <div class="option-card process-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div>
+            <div class="option-card process-card" data-value="comparing-offers"><div class="check-mark">✓</div><div class="option-text">Comparing Offers</div></div>
           </div>
-          <div class="form-group">
-            <label for="businessName">Business Name</label>
-            <input type="text" id="businessName" class="form-input" required>
-            <div class="error-message">Please enter your business name</div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" class="form-input" required>
-            <div class="error-message">Please enter a valid email address</div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" class="form-input" required>
-            <div class="error-message">Please enter your phone number</div>
-          </div>
+          <div class="helper-copy">By submitting, a funding specialist can review the best path for your situation.</div>
           <div class="checkbox-group">
             <label class="checkbox-label">
               <input type="checkbox" id="consent" class="checkbox-input" required>
@@ -418,13 +431,9 @@
             <div class="error-message">Please complete the security verification</div>
           </div>
           <button type="submit" class="submit-button" id="submitButton">Get My Approval</button>
-          <script type="text/javascript">
-            document.getElementById('submitButton').addEventListener('click', function(){ fbq('track','Lead'); }, false);
-          </script>
         </form>
       </div>
 
-      <!-- Success Message -->
       <div class="success-container" id="successContainer">
         <div class="success-main">
           <div class="success-content">
@@ -432,54 +441,164 @@
               <div class="thank-you-text" style="display:flex;flex-direction:column;justify-content:flex-end;">
                 <img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e170b85660175670503_TMM%20FULL%201.png" alt="The Money Moose Logo" class="success-logo">
                 <h2 class="success-title">Thanks, <span id="successName"></span>. Your Funding Request Is Being Reviewed.</h2>
-                <p class="success-message" id="successQualify">Based on what you shared, you could qualify for up to $150,000— final confirmation coming shortly.</p>
+                <p class="success-message" id="successQualify">Based on what you shared, you could qualify for up to $150,000. Final confirmation is coming shortly.</p>
               </div>
               <img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68882077d657942531735ed7_Frame%20130.png" alt="Moose Graphic" class="success-moose">
             </div>
-<p class="success-message">
-  Submit your information below to speed up the process and access approvals faster.
-</p>
-
-<div class="cta-buttons">
-  <a id="primaryCta" href="https://versaficapital.com/application" class="cta-button call-now">
-    Rush Approval
-    <div class="cta-subtext">We’ll take it from here</div>
-  </a>
-</div>
-
+            <p class="success-message">Submit your full application below to speed up the process and access approvals faster.</p>
+            <div class="cta-buttons">
+              <a id="primaryCta" href="https://versaficapital.com/application" class="cta-button call-now">
+                Rush Approval
+                <div class="cta-subtext">We’ll take it from here</div>
+              </a>
+            </div>
             <img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/688a5d6e24d03056d55d984e_Group%2017.avif" alt="Moose Graphic" class="success-moose-mobile">
           </div>
         </div>
       </div>
-
-      <!-- Unqualified Message -->
-      <div class="success-container" id="unqualifiedContainer" style="display:none;">
-        <div class="success-main">
-          <div class="success-content">
-            <h2 class="success-title">Thanks, <span id="unqualifiedName"></span>.</h2>
-            <p class="success-message">
-              At this time, it looks like you don’t meet the minimum requirements.<br>
-              No worries — we’re expanding our programs.<br>
-              Thank you for leaving your information — we’ll notify you as soon as new options become available.
-            </p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
 
 <script>
 (function(){
+  const totalSteps = 12;
   let currentStep = 1;
-  const totalSteps = 8;
   const formData = {};
   const backButton = document.getElementById('backButton');
   const progressInfo = document.getElementById('progressInfo');
   const progressFill = document.getElementById('progressFill');
   const successContainer = document.getElementById('successContainer');
-  const unqualifiedContainer = document.getElementById('unqualifiedContainer');
+
+  const webhookUrl = 'https://hook.us2.make.com/krww2vvutg6hl3ybqvmvw841q3kd97yy';
+
+  const nicheConfigs = {
+    construction: {
+      label: 'CONSTRUCTION',
+      title: 'What type of construction or contracting business do you run?',
+      subtitle: 'Choose the option that fits best.',
+      key: 'industryDetail',
+      dataSourceLabel: 'Money Moose - Construction',
+      options: [
+        { value: 'general-construction', text: 'General Construction' },
+        { value: 'roofing', text: 'Roofing' },
+        { value: 'plumbing', text: 'Plumbing' },
+        { value: 'hvac', text: 'HVAC' },
+        { value: 'electrical', text: 'Electrical' },
+        { value: 'concrete', text: 'Concrete' },
+        { value: 'remodeling', text: 'Remodeling' },
+        { value: 'other-construction', text: 'Other' }
+      ]
+    },
+    healthcare: {
+      label: 'HEALTHCARE',
+      title: 'What type of healthcare business do you operate?',
+      subtitle: 'Choose the option that fits best.',
+      key: 'industryDetail',
+      dataSourceLabel: 'Money Moose - Healthcare',
+      options: [
+        { value: 'dental', text: 'Dental' },
+        { value: 'medical', text: 'Medical' },
+        { value: 'chiropractic', text: 'Chiropractic' },
+        { value: 'mental-health', text: 'Mental Health' },
+        { value: 'home-health', text: 'Home Health' },
+        { value: 'urgent-care', text: 'Urgent Care' },
+        { value: 'wellness', text: 'Wellness' },
+        { value: 'other-healthcare', text: 'Other' }
+      ]
+    },
+    restaurants: {
+      label: 'RESTAURANTS',
+      title: 'What type of food business do you run?',
+      subtitle: 'This helps us understand the revenue profile.',
+      key: 'industryDetail',
+      dataSourceLabel: 'Money Moose - Restaurants',
+      options: [
+        { value: 'restaurant', text: 'Restaurant' },
+        { value: 'bar', text: 'Bar / Lounge' },
+        { value: 'cafe', text: 'Cafe / Coffee Shop' },
+        { value: 'food-truck', text: 'Food Truck' },
+        { value: 'bakery', text: 'Bakery' },
+        { value: 'franchise', text: 'Franchise' },
+        { value: 'takeout', text: 'Takeout / Delivery' },
+        { value: 'other-food', text: 'Other' }
+      ]
+    },
+    sba: {
+      label: 'SBA PROGRAM',
+      title: 'Do you have collateral or commercial real estate to support the request?',
+      subtitle: 'This helps us guide you toward the best SBA path.',
+      key: 'collateral',
+      dataSourceLabel: 'Money Moose - SBA',
+      options: [
+        { value: 'commercial-real-estate', text: 'Commercial Real Estate' },
+        { value: 'other-collateral', text: 'Other Collateral' },
+        { value: 'no-collateral', text: 'No Collateral' },
+        { value: 'not-sure', text: 'Not Sure' }
+      ]
+    },
+    general: {
+      label: 'INDUSTRY',
+      title: 'What industry are you in?',
+      subtitle: 'This helps us match you with the right funding options.',
+      key: 'industryDetail',
+      dataSourceLabel: 'Money Moose - General',
+      options: [
+        { value: 'general-business', text: 'General Business' },
+        { value: 'construction', text: 'Construction' },
+        { value: 'healthcare', text: 'Healthcare' },
+        { value: 'restaurants', text: 'Restaurants' },
+        { value: 'retail', text: 'Retail' },
+        { value: 'transportation', text: 'Transportation' },
+        { value: 'professional-services', text: 'Professional Services' },
+        { value: 'other', text: 'Other' }
+      ]
+    }
+  };
+
+  function detectNiche(){
+    const params = new URLSearchParams(window.location.search);
+    const queryNiche = (params.get('niche') || params.get('type') || '').trim().toLowerCase();
+    const override = (window.niche || '').trim().toLowerCase();
+    const path = (window.location.pathname || '').toLowerCase();
+    const bodyNiche = (document.body && document.body.getAttribute('data-niche') || '').trim().toLowerCase();
+
+    const possible = [queryNiche, override, bodyNiche];
+    for (let i = 0; i < possible.length; i++) {
+      if (nicheConfigs[possible[i]]) return possible[i];
+    }
+
+    if (path.includes('/construction')) return 'construction';
+    if (path.includes('/healthcare')) return 'healthcare';
+    if (path.includes('/restaurants') || path.includes('/restaurant')) return 'restaurants';
+    if (path.includes('/sba')) return 'sba';
+    if (path.includes('/general')) return 'general';
+
+    return 'general';
+  }
+
+  const niche = detectNiche();
+  const nicheConfig = nicheConfigs[niche] || nicheConfigs.general;
+  formData.pageNiche = niche;
+  formData.pagePath = window.location.pathname || '';
+  formData.formVersion = 'money-moose-v2';
+  formData.dataSourceLabel = nicheConfig.dataSourceLabel;
+
+  function populateDynamicStep(){
+    document.getElementById('dynamicStepLabel').textContent = nicheConfig.label;
+    document.getElementById('dynamicStepTitle').textContent = nicheConfig.title;
+    document.getElementById('dynamicStepSubtitle').textContent = nicheConfig.subtitle;
+
+    const grid = document.getElementById('dynamicOptionsGrid');
+    grid.innerHTML = '';
+    nicheConfig.options.forEach(function(option){
+      const card = document.createElement('div');
+      card.className = 'option-card';
+      card.setAttribute('data-value', option.value);
+      card.innerHTML = '<div class="check-mark">✓</div><div class="option-text">' + option.text + '</div>';
+      grid.appendChild(card);
+    });
+  }
 
   function updateProgress(){
     progressInfo.textContent = currentStep + ' of ' + totalSteps;
@@ -490,6 +609,7 @@
   function showStep(stepNumber){
     const currentContainer = document.querySelector('.step-container.active');
     const targetStep = document.querySelector('[data-step="' + stepNumber + '"]');
+
     if(currentContainer && currentContainer !== targetStep){
       currentContainer.classList.add('fade-out');
       currentContainer.classList.remove('show');
@@ -505,61 +625,30 @@
       targetStep.classList.add('active');
       setTimeout(function(){ targetStep.classList.add('show'); },50);
     }
+
+    currentStep = stepNumber;
     updateProgress();
   }
 
-  // Map steps 1–7 to formData keys
-  var stepNames = [
-    'businessType',     // step 1
-    'timeInBusiness',   // step 2
-    'monthlyRevenue',   // step 3
-    'fundingAmount',    // step 4
-    'fundingPurpose',   // step 5
-    'creditScore',      // step 6
-    'defaulted'         // step 7
-  ];
-
-  document.querySelectorAll('.option-card').forEach(function(card){
-    card.addEventListener('click', function(){
-      const step = parseInt(this.closest('.step-container').dataset.step, 10);
-      const value = this.dataset.value;
-
-      this.closest('.options-grid').querySelectorAll('.option-card').forEach(function(c){
-        c.classList.remove('selected');
-      });
-      this.classList.add('selected');
-
-      if(step >= 1 && step <= stepNames.length){
-        formData[stepNames[step - 1]] = value;
-      }
-
-      setTimeout(function(){
-        if(currentStep < totalSteps){
-          currentStep++;
-          showStep(currentStep);
-        }
-      },400);
-    });
-  });
-
-  backButton.addEventListener('click', function(){
-    if(currentStep > 1){
-      currentStep--;
-      showStep(currentStep);
+  function nextStep(){
+    if(currentStep < totalSteps){
+      showStep(currentStep + 1);
     }
-  });
+  }
 
   function validateEmail(email){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
   function validatePhone(phone){ return /^[\d\s\-\(\)\+]+$/.test(phone) && phone.replace(/\D/g,'').length >= 10; }
+  function validateZip(zip){ return /^\d{5}(?:-\d{4})?$/.test(zip.trim()); }
 
   function showError(input, message){
     input.classList.add('error');
     const errorElement = input.nextElementSibling;
     if(errorElement && errorElement.classList.contains('error-message')){
-      errorElement.textContent = message || errorElement.textContent;
+      if(message){ errorElement.textContent = message; }
       errorElement.classList.add('show');
     }
   }
+
   function clearError(input){
     input.classList.remove('error');
     const errorElement = input.nextElementSibling;
@@ -568,33 +657,155 @@
     }
   }
 
+  function amountLabel(value){
+    const map = {
+      'under-10k': '10,000',
+      '10-25k': '25,000',
+      '25-50k': '50,000',
+      '50-100k': '100,000',
+      '100-250k': '250,000',
+      '250-500k': '500,000',
+      '500k-1m': '750,000',
+      '1m+': '1,000,000'
+    };
+    return map[value] || '150,000';
+  }
+
+  function collectAttribution(){
+    const params = new URLSearchParams(window.location.search);
+    const keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'];
+    keys.forEach(function(key){
+      formData[key] = params.get(key) || '';
+    });
+    formData.previewPageId = params.get('pageId') || '';
+    formData.previewWorkflow = params.get('workflow') || '';
+  }
+
+  function setStepValue(step, value){
+    switch(step){
+      case 1: formData.fundingAmount = value; break;
+      case 2: formData.activePositions = value; break;
+      case 3: formData.monthlyRevenue = value; break;
+      case 4: formData.timeInBusiness = value; break;
+      case 5: formData.fundingTimeline = value; break;
+      case 6: formData.creditScore = value; break;
+      case 7: formData[nicheConfig.key] = value; break;
+      case 12: formData.processStage = value; break;
+    }
+  }
+
+  function handleOptionSelection(card){
+    const step = parseInt(card.closest('.step-container').dataset.step, 10);
+    const value = card.dataset.value;
+    const grid = card.closest('.options-grid');
+    grid.querySelectorAll('.option-card').forEach(function(c){ c.classList.remove('selected'); });
+    card.classList.add('selected');
+    setStepValue(step, value);
+
+    if(step !== 12){
+      setTimeout(nextStep, 350);
+    }
+  }
+
+  document.addEventListener('click', function(event){
+    const card = event.target.closest('.option-card');
+    if(!card) return;
+    handleOptionSelection(card);
+  });
+
+  backButton.addEventListener('click', function(){
+    if(currentStep > 1){
+      showStep(currentStep - 1);
+    }
+  });
+
+  document.getElementById('zipNextButton').addEventListener('click', function(){
+    const zipInput = document.getElementById('zipCode');
+    clearError(zipInput);
+    if(!validateZip(zipInput.value)){
+      showError(zipInput, 'Please enter a valid ZIP code');
+      return;
+    }
+    formData.zipCode = zipInput.value.trim();
+    nextStep();
+  });
+
+  document.getElementById('businessNextButton').addEventListener('click', function(){
+    const input = document.getElementById('businessNameStep');
+    clearError(input);
+    if(!input.value.trim()){
+      showError(input, 'Please enter your business name');
+      return;
+    }
+    formData.businessName = input.value.trim();
+    nextStep();
+  });
+
+  document.getElementById('nameNextButton').addEventListener('click', function(){
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    clearError(firstName);
+    clearError(lastName);
+    let valid = true;
+    if(!firstName.value.trim()){
+      showError(firstName, 'Please enter your first name');
+      valid = false;
+    }
+    if(!lastName.value.trim()){
+      showError(lastName, 'Please enter your last name');
+      valid = false;
+    }
+    if(!valid) return;
+    formData.firstName = firstName.value.trim();
+    formData.lastName = lastName.value.trim();
+    nextStep();
+  });
+
+  document.getElementById('contactNextButton').addEventListener('click', function(){
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    clearError(email);
+    clearError(phone);
+    let valid = true;
+    if(!validateEmail(email.value)){
+      showError(email, 'Please enter a valid email address');
+      valid = false;
+    }
+    if(!validatePhone(phone.value)){
+      showError(phone, 'Please enter a valid phone number');
+      valid = false;
+    }
+    if(!valid) return;
+    formData.email = email.value.trim();
+    formData.phone = phone.value.trim();
+    nextStep();
+  });
+
   document.getElementById('contactForm').addEventListener('submit', async function(e){
     e.preventDefault();
 
-    document.querySelectorAll('.form-input').forEach(function(input){ clearError(input); });
+    const processCards = document.querySelectorAll('.process-card');
+    const consent = document.getElementById('consent');
+    const consentError = consent.closest('.checkbox-group').querySelector('.error-message');
     const turnstileError = document.querySelector('#cf-turnstile').nextElementSibling;
     if(turnstileError){ turnstileError.classList.remove('show'); }
 
     let isValid = true;
-    const firstName = document.getElementById('firstName');
-    const lastName = document.getElementById('lastName');
-    const businessName = document.getElementById('businessName');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('phone');
-    const consent = document.getElementById('consent');
+    const processSelected = Array.prototype.slice.call(processCards).some(function(card){
+      return card.classList.contains('selected');
+    });
 
-    if(!firstName.value.trim()){ showError(firstName); isValid = false; }
-    if(!lastName.value.trim()){ showError(lastName); isValid = false; }
-    if(!businessName.value.trim()){ showError(businessName); isValid = false; }
-    if(!validateEmail(email.value)){ showError(email); isValid = false; }
-    if(!validatePhone(phone.value)){ showError(phone); isValid = false; }
+    if(!processSelected){
+      isValid = false;
+      alert('Please select where you are in the funding process.');
+    }
 
-    const consentError = consent.closest('.checkbox-group').querySelector('.error-message');
-    if(!consent.checked){ consentError.classList.add('show'); isValid = false; }
-    else { consentError.classList.remove('show'); }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    formData.utm_content = urlParams.get('utm_content') || '';
+    if(!consent.checked){
+      consentError.classList.add('show');
+      isValid = false;
+    } else {
+      consentError.classList.remove('show');
+    }
 
     let turnstileResponse = '';
     if(typeof turnstile !== 'undefined'){
@@ -610,81 +821,61 @@
       return;
     }
 
-    // Ensure all previous steps are completed
+    collectAttribution();
+    formData.consent = true;
+    formData.turnstileToken = turnstileResponse;
+    formData.timestamp = new Date().toISOString();
+    formData.isUnqualified = false;
+
     if(
-      !formData.businessType ||
-      !formData.timeInBusiness ||
-      !formData.monthlyRevenue ||
       !formData.fundingAmount ||
-      !formData.fundingPurpose ||
+      !formData.activePositions ||
+      !formData.monthlyRevenue ||
+      !formData.timeInBusiness ||
+      !formData.fundingTimeline ||
       !formData.creditScore ||
-      !formData.defaulted
+      !formData[nicheConfig.key] ||
+      !formData.zipCode ||
+      !formData.businessName ||
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.processStage
     ){
       alert('Please complete all previous steps before submitting.');
       return;
     }
 
-    formData.firstName = firstName.value;
-    formData.lastName = lastName.value;
-    formData.businessName = businessName.value;
-    formData.email = email.value;
-    formData.phone = phone.value;
-    formData.consent = consent.checked;
-    formData.turnstileToken = turnstileResponse;
-    formData.timestamp = new Date().toISOString();
-
-    // Unqualified logic (each condition on its own)
-    const isUnqualified =
-      formData.timeInBusiness === 'less-6' ||
-      formData.monthlyRevenue === '0-10k' ||
-      formData.defaulted === 'yes';
-
-    formData.isUnqualified = isUnqualified;
-
     const submitButton = document.getElementById('submitButton');
     submitButton.disabled = true;
     submitButton.textContent = 'Submitting...';
 
-    try{
-      const webhookUrl = 'https://hook.us2.make.com/krww2vvutg6hl3ybqvmvw841q3kd97yy';
-      console.log('Sending form data:', formData);
+    try {
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      if(!response.ok){ throw new Error('Webhook response was not ok'); }
 
-      // Hide active step and progress
+      if(!response.ok){
+        throw new Error('Webhook response was not ok');
+      }
+
       const activeStep = document.querySelector('.step-container.active');
       if(activeStep){ activeStep.classList.remove('active'); }
       document.querySelector('.progress-container').style.display = 'none';
       backButton.style.display = 'none';
 
-      if(isUnqualified){
-        unqualifiedContainer.style.display = 'block';
-        document.getElementById('unqualifiedName').textContent = formData.firstName;
-      } else {
-        successContainer.style.display = 'block';
-        document.getElementById('successName').textContent = formData.firstName;
+      successContainer.style.display = 'block';
+      document.getElementById('successName').textContent = formData.firstName;
+      document.getElementById('successQualify').textContent =
+        'Based on what you shared, you could qualify for up to $' + amountLabel(formData.fundingAmount) + '. Final confirmation is coming shortly.';
 
-        const amountMap = {
-          '10-25k':'25,000',
-          '25-50k':'50,000',
-          '50-100k':'100,000',
-          '100-500k':'500,000',
-          '500k-1m':'750,000',
-          '1m+':'1,000,000'
-        };
-        const qualifyAmount = amountMap[formData.fundingAmount] || '150,000';
-        document.getElementById('successQualify').textContent =
-          'Based on what you shared, you could qualify for up to $' + qualifyAmount + '— final confirmation coming shortly.';
-
-        const primaryCta = document.getElementById('primaryCta');
-        if(primaryCta){ primaryCta.href = 'https://versaficapital.com/application'; }
+      if(typeof fbq === 'function'){
+        fbq('track', 'Lead');
       }
-
-    } catch(error){
+    } catch (error) {
       console.error('Error submitting form:', error);
       submitButton.disabled = false;
       submitButton.textContent = 'Get My Approval';
@@ -697,9 +888,9 @@
     input.addEventListener('input', function(){ clearError(this); });
   });
 
+  populateDynamicStep();
   updateProgress();
   const firstStep = document.querySelector('[data-step="1"]');
   if(firstStep){ firstStep.classList.add('show'); }
 })();
 </script>
-
