@@ -177,7 +177,16 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
         <button class="back-button" id="backButton" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7m-7-7l7-7"/></svg>Back</button>
         <div class="progress-container"><div class="progress-info" id="progressInfo">1 of 12</div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
         <div class="form-content">
-            <div class="step-container active" data-step="1">
+            <div id="trustSignalsTemplate" style="display:none;">
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
+            <div class="step-container active show" data-step="1">
                 <div class="step-header"><div class="step-label">BUSINESS ENTITY</div><h2 class="step-title">What is your business structure?</h2></div>
                 <div class="options-grid">
                     <div class="option-card" data-value="llc"><div class="check-mark">✓</div><div class="option-text">LLC</div></div>
@@ -186,7 +195,14 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
                     <div class="option-card" data-value="sole-prop"><div class="check-mark">✓</div><div class="option-text">Sole Prop</div></div>
                     <div class="option-card" data-value="other"><div class="check-mark">✓</div><div class="option-text">Other</div></div>
                 </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
             </div>
+
             <div class="step-container" data-step="2">
                 <div class="step-header"><div class="step-label">BUSINESS LOAN</div><h2 class="step-title">What is your desired funding amount?</h2></div>
                 <div class="options-grid">
@@ -199,18 +215,109 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
                     <div class="option-card" data-value="500k-1m"><div class="check-mark">✓</div><div class="option-text">$500k- $1m</div></div>
                     <div class="option-card" data-value="1m+"><div class="check-mark">✓</div><div class="option-text">$1m+</div></div>
                 </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
             </div>
-            <div class="step-container" data-step="3"><div class="step-header"><div class="step-label">CURRENT DEBT</div><h2 class="step-title">Do you currently have any active positions or MCAs?</h2></div><div class="options-grid"><div class="option-card" data-value="none"><div class="check-mark">✓</div><div class="option-text">No Active Positions</div></div><div class="option-card" data-value="1"><div class="check-mark">✓</div><div class="option-text">1 Active Position</div></div><div class="option-card" data-value="2-plus"><div class="check-mark">✓</div><div class="option-text">2+ Active Positions</div></div></div></div>
-            <div class="step-container" data-step="4"><div class="step-header"><div class="step-label">FINANCIAL INFORMATION</div><h2 class="step-title">What's your average monthly revenue?</h2></div><div class="options-grid"><div class="option-card" data-value="0-10k"><div class="check-mark">✓</div><div class="option-text">$0 - $10k</div></div><div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div><div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div><div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div><div class="option-card" data-value="100-250k"><div class="check-mark">✓</div><div class="option-text">$100k-250k</div></div><div class="option-card" data-value="250k+"><div class="check-mark">✓</div><div class="option-text">$250k+</div></div></div></div>
-            <div class="step-container" data-step="5"><div class="step-header"><div class="step-label">BUSINESS INFORMATION</div><h2 class="step-title">How long have you been in business?</h2></div><div class="options-grid">
-                <div class="option-card" data-value="under-12-months"><div class="check-mark">✓</div><div class="option-text">Under 12 months</div></div>
-                <div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 Years</div></div>
-                <div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 Years</div></div>
-                <div class="option-card" data-value="5+"><div class="check-mark">✓</div><div class="option-text">5+ Years</div></div>
-            </div></div>
-            <div class="step-container" data-step="6"><div class="step-header"><div class="step-label">TIMELINE</div><h2 class="step-title">How soon do you need the funding?</h2></div><div class="options-grid"><div class="option-card" data-value="today"><div class="check-mark">✓</div><div class="option-text">Today</div></div><div class="option-card" data-value="this-week"><div class="check-mark">✓</div><div class="option-text">This Week</div></div><div class="option-card" data-value="two-weeks"><div class="check-mark">✓</div><div class="option-text">Within 2 Weeks</div></div><div class="option-card" data-value="this-month"><div class="check-mark">✓</div><div class="option-text">This Month</div></div><div class="option-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div></div></div>
-            <div class="step-container" data-step="7"><div class="step-header"><div class="step-label">CREDIT INFORMATION</div><h2 class="step-title">What is your personal credit score?</h2></div><div class="options-grid"><div class="option-card" data-value="under-500"><div class="check-mark">✓</div><div class="option-text">Under 500</div></div><div class="option-card" data-value="500-550"><div class="check-mark">✓</div><div class="option-text">500-550</div></div><div class="option-card" data-value="550-600"><div class="check-mark">✓</div><div class="option-text">550-600</div></div><div class="option-card" data-value="600-650"><div class="check-mark">✓</div><div class="option-text">600-650</div></div><div class="option-card" data-value="650-700"><div class="check-mark">✓</div><div class="option-text">650-700</div></div><div class="option-card" data-value="700+"><div class="check-mark">✓</div><div class="option-text">700+</div></div></div></div>
-            <div class="step-container" data-step="8"><div class="step-header"><div class="step-label" id="dynamicStepLabel">INDUSTRY</div><h2 class="step-title" id="dynamicStepTitle">What industry are you in?</h2><p class="step-subtitle" id="dynamicStepSubtitle">This helps us match you with the right funding options.</p></div><div class="options-grid" id="dynamicOptionsGrid"></div></div>
+
+            <div class="step-container" data-step="3">
+                <div class="step-header"><div class="step-label">CURRENT DEBT</div><h2 class="step-title">Do you currently have any active positions or MCAs?</h2></div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="none"><div class="check-mark">✓</div><div class="option-text">No Active Positions</div></div>
+                    <div class="option-card" data-value="1"><div class="check-mark">✓</div><div class="option-text">1 Active Position</div></div>
+                    <div class="option-card" data-value="2-plus"><div class="check-mark">✓</div><div class="option-text">2+ Active Positions</div></div>
+                </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
+            <div class="step-container" data-step="4">
+                <div class="step-header"><div class="step-label">FINANCIAL INFORMATION</div><h2 class="step-title">What's your average monthly revenue?</h2></div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="0-10k"><div class="check-mark">✓</div><div class="option-text">$0 - $10k</div></div>
+                    <div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div>
+                    <div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div>
+                    <div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div>
+                    <div class="option-card" data-value="100-250k"><div class="check-mark">✓</div><div class="option-text">$100k-250k</div></div>
+                    <div class="option-card" data-value="250k+"><div class="check-mark">✓</div><div class="option-text">$250k+</div></div>
+                </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
+            <div class="step-container" data-step="5">
+                <div class="step-header"><div class="step-label">BUSINESS INFORMATION</div><h2 class="step-title">How long have you been in business?</h2></div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="under-12-months"><div class="check-mark">✓</div><div class="option-text">Under 12 months</div></div>
+                    <div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 Years</div></div>
+                    <div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 Years</div></div>
+                    <div class="option-card" data-value="5+"><div class="check-mark">✓</div><div class="option-text">5+ Years</div></div>
+                </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
+            <div class="step-container" data-step="6">
+                <div class="step-header"><div class="step-label">TIMELINE</div><h2 class="step-title">How soon do you need the funding?</h2></div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="today"><div class="check-mark">✓</div><div class="option-text">Today</div></div>
+                    <div class="option-card" data-value="this-week"><div class="check-mark">✓</div><div class="option-text">This Week</div></div>
+                    <div class="option-card" data-value="two-weeks"><div class="check-mark">✓</div><div class="option-text">Within 2 Weeks</div></div>
+                    <div class="option-card" data-value="this-month"><div class="check-mark">✓</div><div class="option-text">This Month</div></div>
+                    <div class="option-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div>
+                </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
+            <div class="step-container" data-step="7">
+                <div class="step-header"><div class="step-label">CREDIT INFORMATION</div><h2 class="step-title">What is your personal credit score?</h2></div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="under-500"><div class="check-mark">✓</div><div class="option-text">Under 500</div></div>
+                    <div class="option-card" data-value="500-550"><div class="check-mark">✓</div><div class="option-text">500-550</div></div>
+                    <div class="option-card" data-value="550-600"><div class="check-mark">✓</div><div class="option-text">550-600</div></div>
+                    <div class="option-card" data-value="600-650"><div class="check-mark">✓</div><div class="option-text">600-650</div></div>
+                    <div class="option-card" data-value="650-700"><div class="check-mark">✓</div><div class="option-text">650-700</div></div>
+                    <div class="option-card" data-value="700+"><div class="check-mark">✓</div><div class="option-text">700+</div></div>
+                </div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
+            <div class="step-container" data-step="8">
+                <div class="step-header"><div class="step-label" id="dynamicStepLabel">INDUSTRY</div><h2 class="step-title" id="dynamicStepTitle">What industry are you in?</h2><p class="step-subtitle" id="dynamicStepSubtitle">This helps us match you with the right funding options.</p></div>
+                <div class="options-grid" id="dynamicOptionsGrid"></div>
+                <div class="trust-signals">
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div>
+                    <div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div>
+                </div>
+            </div>
+
             <div class="step-container" data-step="9"><div class="step-header"><div class="step-label">BUSINESS DETAILS</div><h2 class="step-title">What's your business name?</h2></div><div class="form-group"><label for="businessNameStep">Business Name</label><input type="text" id="businessNameStep" class="form-input" placeholder="Enter business name" required><div class="error-message">Please enter your business name</div></div><button type="button" class="submit-button" id="businessNextButton">Continue</button></div>
             <div class="step-container" data-step="10"><div class="step-header"><div class="step-label">CONTACT DETAILS</div><h2 class="step-title">What's your full name?</h2></div><div class="options-grid" style="margin-bottom:30px;"><div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" class="form-input" placeholder="First name" required autocomplete="given-name"><div class="error-message">Please enter your first name</div></div><div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" class="form-input" placeholder="Last name" required autocomplete="family-name"><div class="error-message">Please enter your last name</div></div></div><button type="button" class="submit-button" id="nameNextButton">Continue</button></div>
             <div class="step-container" data-step="11"><div class="step-header"><div class="step-label">CONTACT DETAILS</div><h2 class="step-title">Where can we send your options?</h2></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" class="form-input" placeholder="Email address" required inputmode="email" autocomplete="email"><div class="error-message">Please enter a valid email address</div></div><div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" class="form-input" placeholder="Phone number" required inputmode="tel" autocomplete="tel"><div class="error-message">Please enter a valid phone number</div></div><button type="button" class="submit-button" id="contactNextButton">Continue</button></div>
@@ -218,6 +325,7 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
                 <div class="options-grid" id="processStageGrid" style="margin-bottom:25px;"><div class="option-card process-card" data-value="ready-to-fund"><div class="check-mark">✓</div><div class="option-text">Ready to Fund</div></div><div class="option-card process-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div><div class="option-card process-card" data-value="comparing-offers"><div class="check-mark">✓</div><div class="option-text">Comparing Offers</div></div></div><div class="helper-copy">By submitting, a funding specialist can review the best path for your situation.</div><div class="checkbox-group"><label class="checkbox-label"><input type="checkbox" id="consent" class="checkbox-input" required><span>I consent to receive calls, texts, and emails about my loan application and understand that consent is not required to apply for a loan. Message and data rates may apply.</span></label><div class="error-message" style="margin-left:32px;">You must check this box to continue</div></div><div class="form-group"><div id="cf-turnstile" class="cf-turnstile" data-sitekey="0x4AAAAAABpCfWnQIJTa4HoI"></div><div class="error-message">Please complete the security verification</div></div>
                 <input type="hidden" id="hiddenFbp" name="fbp" value=""><input type="hidden" id="hiddenFbc" name="fbc" value=""><input type="hidden" id="hiddenFbclid" name="fbclid" value=""><input type="hidden" id="hiddenGclid" name="gclid" value=""><input type="hidden" id="hiddenUtmSource" name="utm_source" value=""><input type="hidden" id="hiddenUtmMedium" name="utm_medium" value=""><input type="hidden" id="hiddenUtmCampaign" name="utm_campaign" value=""><input type="hidden" id="hiddenUtmContent" name="utm_content" value=""><input type="hidden" id="hiddenUtmTerm" name="utm_term" value=""><input type="hidden" id="hiddenUserAgent" name="user_agent" value=""><input type="hidden" id="hiddenIpAddress" name="ip_address" value=""><input type="hidden" id="hiddenExternalId" name="external_id" value=""><input type="hidden" id="hiddenEventSourceUrl" name="event_source_url" value=""><input type="hidden" id="hiddenPageTitle" name="page_title" value=""><input type="hidden" id="hiddenReferrer" name="referrer" value="">
                 <button type="submit" class="submit-button" id="submitButton">Get My Approval</button></form></div>
+
             <div class="success-container" id="successContainer"><div class="success-main"><div class="success-content"><div class="image-text" style="display:flex;gap:30px;"><div class="thank-you-text" style="display:flex;flex-direction:column;justify-content:flex-end;"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e170b85660175670503_TMM%20FULL%201.png" alt="Logo" class="success-logo"><h2 class="success-title">Thanks, <span id="successName"></span>. Your Funding Request Is Being Reviewed.</h2><p class="success-message" id="successQualify"></p></div><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68882077d657942531735ed7_Frame%20130.png" alt="Moose" class="success-moose"></div><p class="success-message">Submit your full application below to speed up the process.</p><div class="cta-buttons"><a id="primaryCta" href="https://versaficapital.com/application" class="cta-button call-now">Rush Approval</a></div></div></div></div>
             <div class="success-container" id="disqualifiedContainer" style="display:none;"><div class="success-main"><div class="success-content"><h2 class="success-title">Sorry, you don’t qualify at this time</h2><p class="success-message">Based on your answers, we’re not able to offer funding right now. Please check back once your business grows further.</p></div></div></div>
         </div>
@@ -244,7 +352,7 @@ const nicheConfigs = {
 const nicheConfig = nicheConfigs.general;
 formData.data_source_label = nicheConfig.dataSourceLabel;
 
-// Tracking Helpers (Original)
+// Tracking Helpers
 function getCookie(name){ const cookieString = '; ' + document.cookie; const parts = cookieString.split('; ' + name + '='); if(parts.length === 2){ return parts.pop().split(';').shift(); } return ''; }
 function setHiddenValue(id, value){ const field = document.getElementById(id); if(field){ field.value = value || ''; } }
 async function getIPAddress(){ if(trackingCache.ipAddress) return trackingCache.ipAddress; try { const response = await fetch('https://api.ipify.org?format=json'); const data = await response.json(); trackingCache.ipAddress = data.ip; return data.ip; } catch(e){ return ''; } }
@@ -266,7 +374,6 @@ async function collectTrackingData(){
     formData.fbc = getCookie('_fbc') || (formData.fbclid ? 'fb.1.' + Date.now() + '.' + formData.fbclid : '');
     formData.ip_address = await getIPAddress();
     
-    // Set Hidden Inputs
     ['hiddenFbp','hiddenFbc','hiddenFbclid','hiddenGclid','hiddenUtmSource','hiddenUtmMedium','hiddenUtmCampaign','hiddenUtmContent','hiddenUtmTerm','hiddenUserAgent','hiddenIpAddress','hiddenEventSourceUrl','hiddenPageTitle','hiddenReferrer'].forEach(id => {
         setHiddenValue(id, formData[id.replace('hidden','').charAt(0).toLowerCase() + id.replace('hidden','').slice(1)]);
     });
@@ -295,8 +402,8 @@ function showStep(stepNumber){
 
 function isDisqualified(step, value){
     if(step === 4 && value === '0-10k') return true;
-    if(step === 5 && value === 'under-12-months') return true; // Alex
-    if(step === 7 && value === 'under-500') return true; // Alex
+    if(step === 5 && value === 'under-12-months') return true;
+    if(step === 7 && value === 'under-500') return true;
     return false;
 }
 
@@ -324,7 +431,6 @@ document.addEventListener('click', function(e){
 
 backButton.addEventListener('click', () => showStep(currentStep - 1));
 
-// Next Button Handlers
 document.getElementById('businessNextButton').onclick = () => { const i = document.getElementById('businessNameStep'); clearError(i); if(!i.value.trim()){ showError(i, 'Required'); return; } formData.businessName = i.value.trim(); showStep(currentStep + 1); };
 document.getElementById('nameNextButton').onclick = () => { const f = document.getElementById('firstName'), l = document.getElementById('lastName'); clearError(f); clearError(l); if(!f.value.trim() || !l.value.trim()){ showError(f, 'Required'); return; } formData.firstName = f.value.trim(); formData.lastName = l.value.trim(); showStep(currentStep + 1); };
 document.getElementById('contactNextButton').onclick = () => { const e = document.getElementById('email'), p = document.getElementById('phone'); clearError(e); clearError(p); if(!validateEmail(e.value)){ showError(e, 'Invalid email'); return; } if(!validatePhone(p.value)){ showError(p, 'Invalid phone'); return; } formData.email = normalizeEmail(e.value); formData.phone = sanitizePhoneDigits(p.value); showStep(currentStep + 1); };
@@ -344,11 +450,9 @@ document.getElementById('contactForm').onsubmit = async (e) => {
     } catch(err){ btn.disabled = false; btn.textContent = 'Get My Approval'; }
 };
 
-// Phone Input Original Logic
 const pIn = document.getElementById('phone');
 pIn.addEventListener('input', function(){ this.value = formatPhoneDisplay(this.value); });
 
-// Init
 (function populate(){
     const grid = document.getElementById('dynamicOptionsGrid');
     nicheConfig.options.forEach(o => { const c = document.createElement('div'); c.className = 'option-card'; c.setAttribute('data-value', o.value); c.innerHTML = '<div class="check-mark">✓</div><div class="option-text">' + o.text + '</div>'; grid.appendChild(c); });
