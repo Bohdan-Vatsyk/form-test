@@ -49,13 +49,14 @@ display:flex;align-items:center;justify-content:center;
 }
 .check-icon svg{width:16px;height:16px;fill:#3C8648}
 .right-panel{flex:1;padding:40px;position:relative;display:flex;flex-direction:column}
-.progress-container{margin-bottom:50px;opacity:0;transform:translateY(-20px);animation:fadeInDown .6s ease-out forwards;animation-delay:.6s}
+.progress-container{margin-top:35px;margin-bottom:40px;opacity:0;transform:translateY(-20px);animation:fadeInDown .6s ease-out forwards;animation-delay:.6s}
 @keyframes fadeInDown{to{opacity:1;transform:translateY(0)}}
-.progress-info{text-align:center;margin-bottom:20px;color:#718096;font-size:16px}
+/* Приховано текст "1 of X" */
+.progress-info{display:none; text-align:center; margin-bottom:20px; color:#718096; font-size:16px}
 .progress-bar{width:100%;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
-.progress-fill{height:100%;background:#3c8648;border-radius:4px;transition:width .5s ease;width:8.333%}
+.progress-fill{height:100%;background:#3c8648;border-radius:4px;transition:width .5s ease;width:16.66%}
 .back-button{
-position:absolute;top:40px;left:40px;background:none;border:none;color:#718096;cursor:pointer;
+position:absolute;top:30px;left:30px;background:none;border:none;color:#718096;cursor:pointer;
 display:flex;align-items:center;gap:8px;font-size:16px;transition:color .3s ease;padding:8px;z-index:10;
 }
 .back-button:hover{color:#3c8648}
@@ -127,7 +128,7 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
 }
 .trust-signal{height:40px}
 .trust-signal img{height:100%;width:auto;object-fit:contain}
-.step-container[data-step="12"] .trust-signals{display:none}
+.step-container[data-step="6"] .trust-signals{display:none}
 .success-container p.success-message:nth-of-type(2){font-weight:bold;font-size:20px}
 .success-container a.submit-button{margin-top:20px !important}
 .cf-turnstile{margin:20px 0;display:flex;justify-content:center}
@@ -139,7 +140,8 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
 .left-panel{padding:40px}
 .left-panel h1{text-align:center}
 .selling-point{justify-content:center}
-.back-button{top:20px;left:20px}
+.back-button{top:15px;left:15px}
+.progress-container{margin-top:30px; margin-bottom:30px}
 .step-title{font-size:22px}
 .options-grid{grid-template-columns:1fr}
 .option-card:nth-child(5):last-child,
@@ -175,7 +177,7 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
     </div>
     <div class="right-panel">
         <button class="back-button" id="backButton" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7m-7-7l7-7"/></svg>Back</button>
-        <div class="progress-container"><div class="progress-info" id="progressInfo">1 of 12</div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
+        <div class="progress-container"><div class="progress-info" id="progressInfo"></div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div>
         <div class="form-content">
             
             <div class="step-container active show" data-step="1">
@@ -206,20 +208,81 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
                 <div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div>
             </div>
 
-            <div class="step-container" data-step="3"><div class="step-header"><div class="step-label">CURRENT DEBT</div><h2 class="step-title">Do you currently have any active positions or MCAs?</h2></div><div class="options-grid"><div class="option-card" data-value="none"><div class="check-mark">✓</div><div class="option-text">No Active Positions</div></div><div class="option-card" data-value="1"><div class="check-mark">✓</div><div class="option-text">1 Active Position</div></div><div class="option-card" data-value="2-plus"><div class="check-mark">✓</div><div class="option-text">2+ Active Positions</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
-            <div class="step-container" data-step="4"><div class="step-header"><div class="step-label">FINANCIAL INFORMATION</div><h2 class="step-title">What's your average monthly revenue?</h2></div><div class="options-grid"><div class="option-card" data-value="0-10k"><div class="check-mark">✓</div><div class="option-text">$0 - $10k</div></div><div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div><div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div><div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div><div class="option-card" data-value="100-250k"><div class="check-mark">✓</div><div class="option-text">$100k-250k</div></div><div class="option-card" data-value="250k+"><div class="check-mark">✓</div><div class="option-text">$250k+</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
-            <div class="step-container" data-step="5"><div class="step-header"><div class="step-label">BUSINESS INFORMATION</div><h2 class="step-title">How long have you been in business?</h2></div><div class="options-grid"><div class="option-card" data-value="under-12-months"><div class="check-mark">✓</div><div class="option-text">Under 12 months</div></div><div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 Years</div></div><div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 Years</div></div><div class="option-card" data-value="5+"><div class="check-mark">✓</div><div class="option-text">5+ Years</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
-            <div class="step-container" data-step="6"><div class="step-header"><div class="step-label">TIMELINE</div><h2 class="step-title">How soon do you need the funding?</h2></div><div class="options-grid"><div class="option-card" data-value="today"><div class="check-mark">✓</div><div class="option-text">Today</div></div><div class="option-card" data-value="this-week"><div class="check-mark">✓</div><div class="option-text">This Week</div></div><div class="option-card" data-value="two-weeks"><div class="check-mark">✓</div><div class="option-text">Within 2 Weeks</div></div><div class="option-card" data-value="this-month"><div class="check-mark">✓</div><div class="option-text">This Month</div></div><div class="option-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
-            <div class="step-container" data-step="7"><div class="step-header"><div class="step-label">CREDIT INFORMATION</div><h2 class="step-title">What is your personal credit score?</h2></div><div class="options-grid"><div class="option-card" data-value="under-500"><div class="check-mark">✓</div><div class="option-text">Under 500</div></div><div class="option-card" data-value="500-550"><div class="check-mark">✓</div><div class="option-text">500-550</div></div><div class="option-card" data-value="550-600"><div class="check-mark">✓</div><div class="option-text">550-600</div></div><div class="option-card" data-value="600-650"><div class="check-mark">✓</div><div class="option-text">600-650</div></div><div class="option-card" data-value="650-700"><div class="check-mark">✓</div><div class="option-text">650-700</div></div><div class="option-card" data-value="700+"><div class="check-mark">✓</div><div class="option-text">700+</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
-            <div class="step-container" data-step="8"><div class="step-header"><div class="step-label" id="dynamicStepLabel">INDUSTRY</div><h2 class="step-title" id="dynamicStepTitle">What industry are you in?</h2><p class="step-subtitle" id="dynamicStepSubtitle">This helps us match you with the right funding options.</p></div><div class="options-grid" id="dynamicOptionsGrid"></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
+            <div class="step-container" data-step="3"><div class="step-header"><div class="step-label">FINANCIAL INFORMATION</div><h2 class="step-title">What's your average monthly revenue?</h2></div><div class="options-grid"><div class="option-card" data-value="0-10k"><div class="check-mark">✓</div><div class="option-text">$0 - $10k</div></div><div class="option-card" data-value="10-25k"><div class="check-mark">✓</div><div class="option-text">$10k-25k</div></div><div class="option-card" data-value="25-50k"><div class="check-mark">✓</div><div class="option-text">$25k-50k</div></div><div class="option-card" data-value="50-100k"><div class="check-mark">✓</div><div class="option-text">$50k-100k</div></div><div class="option-card" data-value="100-250k"><div class="check-mark">✓</div><div class="option-text">$100k-250k</div></div><div class="option-card" data-value="250k+"><div class="check-mark">✓</div><div class="option-text">$250k+</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
+            <div class="step-container" data-step="4"><div class="step-header"><div class="step-label">BUSINESS INFORMATION</div><h2 class="step-title">How long have you been in business?</h2></div><div class="options-grid"><div class="option-card" data-value="under-12-months"><div class="check-mark">✓</div><div class="option-text">Under 12 months</div></div><div class="option-card" data-value="1-2"><div class="check-mark">✓</div><div class="option-text">1-2 Years</div></div><div class="option-card" data-value="2-5"><div class="check-mark">✓</div><div class="option-text">2-5 Years</div></div><div class="option-card" data-value="5+"><div class="check-mark">✓</div><div class="option-text">5+ Years</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
+            <div class="step-container" data-step="5"><div class="step-header"><div class="step-label">CREDIT INFORMATION</div><h2 class="step-title">What is your personal credit score?</h2></div><div class="options-grid"><div class="option-card" data-value="under-500"><div class="check-mark">✓</div><div class="option-text">Under 500</div></div><div class="option-card" data-value="500-550"><div class="check-mark">✓</div><div class="option-text">500-550</div></div><div class="option-card" data-value="550-600"><div class="check-mark">✓</div><div class="option-text">550-600</div></div><div class="option-card" data-value="600-650"><div class="check-mark">✓</div><div class="option-text">600-650</div></div><div class="option-card" data-value="650-700"><div class="check-mark">✓</div><div class="option-text">650-700</div></div><div class="option-card" data-value="700+"><div class="check-mark">✓</div><div class="option-text">700+</div></div></div><div class="trust-signals"><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e90fc6715aa4a911d3a_Group.svg" alt="BBB"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881ea8e1297aa9e752ecdb_Group%209.svg" alt="Trustpilot"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eb7767ff8b859aa98ff_Group-1.svg" alt="SSL"></div><div class="trust-signal"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881eca3df2e30fad63cd54_McAfee_Secure.svg" alt="McAfee"></div></div></div>
 
-            <div class="step-container" data-step="9"><div class="step-header"><div class="step-label">BUSINESS DETAILS</div><h2 class="step-title">What's your business name?</h2></div><div class="form-group"><label for="businessNameStep">Business Name</label><input type="text" id="businessNameStep" class="form-input" placeholder="Enter business name" required><div class="error-message">Please enter your business name</div></div><button type="button" class="submit-button" id="businessNextButton">Continue</button></div>
-            <div class="step-container" data-step="10"><div class="step-header"><div class="step-label">CONTACT DETAILS</div><h2 class="step-title">What's your full name?</h2></div><div class="options-grid" style="margin-bottom:30px;"><div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" class="form-input" placeholder="First name" required autocomplete="given-name"><div class="error-message">Please enter your first name</div></div><div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" class="form-input" placeholder="Last name" required autocomplete="family-name"><div class="error-message">Please enter your last name</div></div></div><button type="button" class="submit-button" id="nameNextButton">Continue</button></div>
-            <div class="step-container" data-step="11"><div class="step-header"><div class="step-label">CONTACT DETAILS</div><h2 class="step-title">Where can we send your options?</h2></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" class="form-input" placeholder="Email address" required inputmode="email" autocomplete="email"><div class="error-message">Please enter a valid email address</div></div><div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" class="form-input" placeholder="Phone number" required inputmode="tel" autocomplete="tel"><div class="error-message">Please enter a valid phone number</div></div><button type="button" class="submit-button" id="contactNextButton">Continue</button></div>
-            <div class="step-container" data-step="12"><div class="step-header"><div class="step-label">FINAL STEP</div><h2 class="step-title">Where are you in the funding process right now?</h2><p class="step-subtitle">One last step and we’ll match you with the best options.</p></div><form id="contactForm">
-                <div class="options-grid" id="processStageGrid" style="margin-bottom:25px;"><div class="option-card process-card" data-value="ready-to-fund"><div class="check-mark">✓</div><div class="option-text">Ready to Fund</div></div><div class="option-card process-card" data-value="just-exploring"><div class="check-mark">✓</div><div class="option-text">Just Exploring</div></div><div class="option-card process-card" data-value="comparing-offers"><div class="check-mark">✓</div><div class="option-text">Comparing Offers</div></div></div><div class="helper-copy">By submitting, a funding specialist can review the best path for your situation.</div><div class="checkbox-group"><label class="checkbox-label"><input type="checkbox" id="consent" class="checkbox-input" required><span>I consent to receive calls, texts, and emails about my loan application and understand that consent is not required to apply for a loan. Message and data rates may apply.</span></label><div class="error-message" style="margin-left:32px;">You must check this box to continue</div></div><div class="form-group"><div id="cf-turnstile" class="cf-turnstile" data-sitekey="0x4AAAAAABpCfWnQIJTa4HoI"></div><div class="error-message">Please complete the security verification</div></div>
-                <input type="hidden" id="hiddenFbp" name="fbp" value=""><input type="hidden" id="hiddenFbc" name="fbc" value=""><input type="hidden" id="hiddenFbclid" name="fbclid" value=""><input type="hidden" id="hiddenGclid" name="gclid" value=""><input type="hidden" id="hiddenUtmSource" name="utm_source" value=""><input type="hidden" id="hiddenUtmMedium" name="utm_medium" value=""><input type="hidden" id="hiddenUtmCampaign" name="utm_campaign" value=""><input type="hidden" id="hiddenUtmContent" name="utm_content" value=""><input type="hidden" id="hiddenUtmTerm" name="utm_term" value=""><input type="hidden" id="hiddenUserAgent" name="user_agent" value=""><input type="hidden" id="hiddenIpAddress" name="ip_address" value=""><input type="hidden" id="hiddenExternalId" name="external_id" value=""><input type="hidden" id="hiddenEventSourceUrl" name="event_source_url" value=""><input type="hidden" id="hiddenPageTitle" name="page_title" value=""><input type="hidden" id="hiddenReferrer" name="referrer" value="">
-                <button type="submit" class="submit-button" id="submitButton">Get My Approval</button></form></div>
+            <div class="step-container" data-step="6">
+                <div class="step-header">
+                    <div class="step-label">FINAL STEP</div>
+                    <h2 class="step-title">Business & Contact Info</h2>
+                    <p class="step-subtitle">One last step and we’ll match you with the best options.</p>
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="businessNameStep">Business Name</label>
+                        <input type="text" id="businessNameStep" class="form-input" placeholder="Enter business name" required>
+                        <div class="error-message" id="businessError">Please enter your business name</div>
+                    </div>
+                    
+                    <div class="options-grid" style="margin-bottom:20px;">
+                        <div class="form-group" style="margin-bottom:0;">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" class="form-input" placeholder="First name" required autocomplete="given-name">
+                        </div>
+                        <div class="form-group" style="margin-bottom:0;">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" class="form-input" placeholder="Last name" required autocomplete="family-name">
+                        </div>
+                    </div>
+
+                    <div class="options-grid" style="margin-bottom:25px;">
+                        <div class="form-group" style="margin-bottom:0;">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Email address" required inputmode="email" autocomplete="email">
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0;">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="Phone number" required inputmode="tel" autocomplete="tel">
+                            <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                        </div>
+                    </div>
+
+                    <div class="helper-copy">By submitting, a funding specialist can review the best path for your situation.</div>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="consent" class="checkbox-input" required>
+                            <span>I consent to receive calls, texts, and emails about my loan application and understand that consent is not required to apply for a loan. Message and data rates may apply.</span>
+                        </label>
+                        <div class="error-message" style="margin-left:32px;">You must check this box to continue</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div id="cf-turnstile" class="cf-turnstile" data-sitekey="0x4AAAAAABpCfWnQIJTa4HoI"></div>
+                        <div class="error-message">Please complete the security verification</div>
+                    </div>
+                    
+                    <input type="hidden" id="hiddenFbp" name="fbp" value="">
+                    <input type="hidden" id="hiddenFbc" name="fbc" value="">
+                    <input type="hidden" id="hiddenFbclid" name="fbclid" value="">
+                    <input type="hidden" id="hiddenGclid" name="gclid" value="">
+                    <input type="hidden" id="hiddenUtmSource" name="utm_source" value="">
+                    <input type="hidden" id="hiddenUtmMedium" name="utm_medium" value="">
+                    <input type="hidden" id="hiddenUtmCampaign" name="utm_campaign" value="">
+                    <input type="hidden" id="hiddenUtmContent" name="utm_content" value="">
+                    <input type="hidden" id="hiddenUtmTerm" name="utm_term" value="">
+                    <input type="hidden" id="hiddenUserAgent" name="user_agent" value="">
+                    <input type="hidden" id="hiddenIpAddress" name="ip_address" value="">
+                    <input type="hidden" id="hiddenExternalId" name="external_id" value="">
+                    <input type="hidden" id="hiddenEventSourceUrl" name="event_source_url" value="">
+                    <input type="hidden" id="hiddenPageTitle" name="page_title" value="">
+                    <input type="hidden" id="hiddenReferrer" name="referrer" value="">
+                    
+                    <button type="submit" class="submit-button" id="submitButton">Get My Approval</button>
+                </form>
+            </div>
 
             <div class="success-container" id="successContainer"><div class="success-main"><div class="success-content"><div class="image-text" style="display:flex;gap:30px;"><div class="thank-you-text" style="display:flex;flex-direction:column;justify-content:flex-end;"><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68881e170b85660175670503_TMM%20FULL%201.png" alt="Logo" class="success-logo"><h2 class="success-title">Thanks, <span id="successName"></span>. Your Funding Request Is Being Reviewed.</h2><p class="success-message" id="successQualify"></p></div><img src="https://cdn.prod.website-files.com/6884b561a263f3a9e1ced750/68882077d657942531735ed7_Frame%20130.png" alt="Moose" class="success-moose"></div><p class="success-message">Submit your full application below to speed up the process.</p><div class="cta-buttons"><a id="primaryCta" href="https://versaficapital.com/application" class="cta-button call-now">Rush Approval</a></div></div></div></div>
             <div class="success-container" id="disqualifiedContainer" style="display:none;"><div class="success-main"><div class="success-content"><h2 class="success-title">Sorry, you don’t qualify at this time</h2><p class="success-message">Based on your answers, we’re not able to offer funding right now. Please check back once your business grows further.</p></div></div></div>
@@ -229,27 +292,22 @@ flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeInUp .6s ease-
 
 <script>
 (function(){
-const totalSteps = 12;
+const totalSteps = 6;
 let currentStep = 1;
 const formData = {};
 const backButton = document.getElementById('backButton');
-const progressInfo = document.getElementById('progressInfo');
 const progressFill = document.getElementById('progressFill');
 const successContainer = document.getElementById('successContainer');
 const trackingCache = { ipAddress: '', initialized: false };
 const webhookUrl = 'https://hook.us2.make.com/krww2vvutg6hl3ybqvmvw841q3kd97yy';
 
+// Logic for niche tracking
 const nicheConfigs = {
-    construction: { label: 'CONSTRUCTION', title: 'What type of construction or contracting business do you run?', subtitle: 'Choose the option that fits best.', key: 'industryDetail', dataSourceLabel: 'Money Moose - Construction',
-    options: [{ value: 'general-construction', text: 'General Construction' }, { value: 'roofing', text: 'Roofing' }, { value: 'plumbing', text: 'Plumbing' }, { value: 'hvac', text: 'HVAC' }, { value: 'electrical', text: 'Electrical' }, { value: 'concrete', text: 'Concrete' }, { value: 'remodeling', text: 'Remodeling' }, { value: 'other-construction', text: 'Other' }] },
-    healthcare: { label: 'HEALTHCARE', title: 'What type of healthcare business do you operate?', subtitle: 'Choose the option that fits best.', key: 'industryDetail', dataSourceLabel: 'Money Moose - Healthcare',
-    options: [{ value: 'dental', text: 'Dental' }, { value: 'medical', text: 'Medical' }, { value: 'chiropractic', text: 'Chiropractic' }, { value: 'mental-health', text: 'Mental Health' }, { value: 'home-health', text: 'Home Health' }, { value: 'urgent-care', text: 'Urgent Care' }, { value: 'beauty-wellness-medspa', text: 'Beauty and Wellness/Med Spa' }, { value: 'other-healthcare', text: 'Other' }] },
-    restaurants: { label: 'RESTAURANTS', title: 'What type of food business do you run?', subtitle: 'This helps us understand the revenue profile.', key: 'industryDetail', dataSourceLabel: 'Money Moose - Restaurants',
-    options: [{ value: 'restaurant', text: 'Restaurant' }, { value: 'bar', text: 'Bar / Lounge' }, { value: 'cafe', text: 'Cafe / Coffee Shop' }, { value: 'food-truck', text: 'Food Truck' }, { value: 'bakery', text: 'Bakery' }, { value: 'franchise', text: 'Franchise' }, { value: 'takeout', text: 'Takeout / Delivery' }, { value: 'other-food', text: 'Other' }] },
-    sba: { label: 'INDUSTRY', title: 'What industry are you in?', subtitle: 'This helps us match you with the right SBA funding options.', key: 'industryDetail', dataSourceLabel: 'Money Moose - SBA',
-    options: [{ value: 'general-business', text: 'General Business' }, { value: 'construction', text: 'Construction' }, { value: 'healthcare', text: 'Healthcare' }, { value: 'restaurants', text: 'Restaurants' }, { value: 'retail', text: 'Retail' }, { value: 'transportation', text: 'Transportation' }, { value: 'professional-services', text: 'Professional Services' }, { value: 'other', text: 'Other' }] },
-    general: { label: 'INDUSTRY', title: 'What industry are you in?', subtitle: 'This helps us match you with the right funding options.', key: 'industryDetail', dataSourceLabel: 'Money Moose - General',
-    options: [{ value: 'general-business', text: 'General Business' }, { value: 'construction', text: 'Construction' }, { value: 'healthcare', text: 'Healthcare' }, { value: 'restaurants', text: 'Restaurants' }, { value: 'retail', text: 'Retail' }, { value: 'transportation', text: 'Transportation' }, { value: 'professional-services', text: 'Professional Services' }, { value: 'other', text: 'Other' }] }
+    construction: { dataSourceLabel: 'Money Moose - Construction' },
+    healthcare: { dataSourceLabel: 'Money Moose - Healthcare' },
+    restaurants: { dataSourceLabel: 'Money Moose - Restaurants' },
+    sba: { dataSourceLabel: 'Money Moose - SBA' },
+    general: { dataSourceLabel: 'Money Moose - General' }
 };
 
 function detectNiche(){
@@ -269,7 +327,7 @@ function detectNiche(){
 const niche = detectNiche();
 const nicheConfig = nicheConfigs[niche] || nicheConfigs.general;
 formData.pageNiche = niche;
-formData.formVersion = 'money-moose-v2.4';
+formData.formVersion = 'money-moose-v2.5-super-lean';
 formData.dataSourceLabel = nicheConfig.dataSourceLabel;
 
 function getCookie(name){ const c = '; ' + document.cookie; const p = c.split('; ' + name + '='); if(p.length === 2) return p.pop().split(';').shift(); return ''; }
@@ -307,7 +365,10 @@ function validatePhone(p){ return sanitizePhoneDigits(p).length === 10; }
 function showError(i, m){ i.classList.add('error'); const e = i.nextElementSibling; if(e && e.classList.contains('error-message')){ e.textContent = m; e.classList.add('show'); } }
 function clearError(i){ i.classList.remove('error'); const e = i.nextElementSibling; if(e && e.classList.contains('error-message')){ e.classList.remove('show'); } }
 
-function updateProgress(){ progressInfo.textContent = currentStep + ' of 12'; progressFill.style.width = ((currentStep / 12) * 100) + '%'; backButton.style.display = currentStep > 1 ? 'flex' : 'none'; }
+function updateProgress(){ 
+    progressFill.style.width = ((currentStep / totalSteps) * 100) + '%'; 
+    backButton.style.display = currentStep > 1 ? 'flex' : 'none'; 
+}
 
 function showStep(s){
     const curr = document.querySelector('.step-container.active');
@@ -319,9 +380,9 @@ function showStep(s){
 
 function isDisqualified(s, v){
     if(s === 2 && v === 'under-10k') return true;
-    if(s === 4 && v === '0-10k') return true;
-    if(s === 5 && v === 'under-12-months') return true;
-    if(s === 7 && v === 'under-500') return true;
+    if(s === 3 && v === '0-10k') return true;
+    if(s === 4 && v === 'under-12-months') return true;
+    if(s === 5 && v === 'under-500') return true;
     return false;
 }
 
@@ -333,34 +394,55 @@ function showDisqualified(){
 }
 
 function setStepValue(s, v){
-    const map = {1:'businessStructure', 2:'fundingAmount', 3:'activePositions', 4:'monthlyRevenue', 5:'timeInBusiness', 6:'fundingTimeline', 7:'creditScore', 8:nicheConfig.key, 12:'processStage'};
+    const map = {1:'businessStructure', 2:'fundingAmount', 3:'monthlyRevenue', 4:'timeInBusiness', 5:'creditScore'};
     if(map[s]) formData[map[s]] = v;
 }
 
 document.addEventListener('click', function(e){
     const card = e.target.closest('.option-card');
     if(!card) return;
-    const step = parseInt(card.closest('.step-container').dataset.step, 10);
+    const stepContainer = card.closest('.step-container');
+    if(!stepContainer) return;
+    const step = parseInt(stepContainer.dataset.step, 10);
     const val = card.dataset.value;
     card.closest('.options-grid').querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
     card.classList.add('selected');
     setStepValue(step, val);
     if(isDisqualified(step, val)){ showDisqualified(); return; }
-    if(step !== 12) setTimeout(() => showStep(currentStep + 1), 350);
+    if(step !== 6) setTimeout(() => showStep(currentStep + 1), 350);
 });
 
 backButton.addEventListener('click', () => showStep(currentStep - 1));
 
-document.getElementById('businessNextButton').onclick = () => { const i = document.getElementById('businessNameStep'); clearError(i); if(!i.value.trim()){ showError(i, 'Required'); return; } formData.businessName = i.value.trim(); showStep(currentStep + 1); };
-document.getElementById('nameNextButton').onclick = () => { const f = document.getElementById('firstName'), l = document.getElementById('lastName'); clearError(f); clearError(l); if(!f.value.trim() || !l.value.trim()){ showError(f, 'Required'); return; } formData.firstName = f.value.trim(); formData.lastName = l.value.trim(); showStep(currentStep + 1); };
-document.getElementById('contactNextButton').onclick = () => { const e = document.getElementById('email'), p = document.getElementById('phone'); clearError(e); clearError(p); if(!validateEmail(e.value)){ showError(e, 'Invalid email'); return; } if(!validatePhone(p.value)){ showError(p, 'Invalid phone'); return; } formData.email = normalizeEmail(e.value); formData.phone = sanitizePhoneDigits(p.value); showStep(currentStep + 1); };
-
 document.getElementById('contactForm').onsubmit = async (e) => {
     e.preventDefault();
-    const btn = document.getElementById('submitButton');
+    
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const bNameInput = document.getElementById('businessNameStep');
+    const fNameInput = document.getElementById('firstName');
+    const lNameInput = document.getElementById('lastName');
+    
+    clearError(emailInput); 
+    clearError(phoneInput);
+    
+    let hasError = false;
+    if(!validateEmail(emailInput.value)){ showError(emailInput, 'Invalid email'); hasError = true; } 
+    if(!validatePhone(phoneInput.value)){ showError(phoneInput, 'Invalid phone'); hasError = true; }
+    
+    if(hasError) return;
     if(!document.getElementById('consent').checked){ alert('Consent required'); return; }
+    
+    const btn = document.getElementById('submitButton');
     btn.disabled = true; btn.textContent = 'Submitting...';
+    
+    formData.businessName = bNameInput.value.trim();
+    formData.firstName = fNameInput.value.trim();
+    formData.lastName = lNameInput.value.trim();
+    formData.email = normalizeEmail(emailInput.value);
+    formData.phone = sanitizePhoneDigits(phoneInput.value);
     formData.timestamp = new Date().toISOString();
+    
     try {
         await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
         document.querySelector('.step-container.active').classList.remove('active','show');
@@ -370,16 +452,8 @@ document.getElementById('contactForm').onsubmit = async (e) => {
     } catch(err){ btn.disabled = false; btn.textContent = 'Get My Approval'; }
 };
 
-const phoneInput = document.getElementById('phone');
-phoneInput.addEventListener('input', function(){ this.value = formatPhoneDisplay(this.value); });
-
-(function populate(){
-    document.getElementById('dynamicStepLabel').textContent = nicheConfig.label;
-    document.getElementById('dynamicStepTitle').textContent = nicheConfig.title;
-    document.getElementById('dynamicStepSubtitle').textContent = nicheConfig.subtitle;
-    const grid = document.getElementById('dynamicOptionsGrid');
-    nicheConfig.options.forEach(o => { const c = document.createElement('div'); c.className = 'option-card'; c.setAttribute('data-value', o.value); c.innerHTML = '<div class="check-mark">✓</div><div class="option-text">' + o.text + '</div>'; grid.appendChild(c); });
-})();
+const phoneField = document.getElementById('phone');
+phoneField.addEventListener('input', function(){ this.value = formatPhoneDisplay(this.value); });
 
 collectTrackingData().finally(() => { const f = document.querySelector('[data-step="1"]'); if(f) f.classList.add('show'); updateProgress(); });
 })();
